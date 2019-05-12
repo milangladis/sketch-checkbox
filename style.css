@@ -35,7 +35,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.buttons li {
+.microInteration {
   width: 200px;
   color: rgba(255, 255, 255, 0.5);
   line-height: 50px;
@@ -48,7 +48,7 @@ body {
   align-items: center;
   transition: all 0.3s ease;
 }
-.buttons li span {
+.microInteration span {
   position: relative;
   width: 16px;
   height: 16px;
@@ -59,14 +59,14 @@ body {
   align-items: center;
   justify-content: center;
 }
-.buttons li span::before {
+.microInteration span::before {
   content: "";
   width: 6px;
   height: 6px;
   border-radius: 100%;
   transition: all 0.3s ease;
 }
-.buttons li span::after {
+.microInteration span::after {
   content: "";
   position: absolute;
   left: 0;
@@ -77,14 +77,14 @@ body {
   border-radius: 100%;
   opacity: 0;
 }
-.buttons li svg {
+.microInteration svg {
   position: absolute;
   left: -50px;
   top: -50px;
   opacity: 0;
   visibility: hidden;
 }
-.buttons li::before {
+.microInteration::before {
   content: "";
   position: absolute;
   top: 0;
@@ -95,46 +95,46 @@ body {
   transition: all 0.3s ease;
   border-radius: 6px;
 }
-.buttons li:hover span::before {
+.microInteration:hover span::before {
   background-color: #373d4c;
 }
-.buttons li:hover::before {
+.microInteration:hover::before {
   background-color: rgba(55, 66, 95, 0.3);
 }
-.buttons li:not(.active):before {
+.microInteration:not(.active):before {
   top: 5px;
   right: 5px;
   bottom: 5px;
   left: 5px;
 }
-.buttons li.active {
+.microInteration.active {
   color: #fff;
 }
-.buttons li.active::before {
+.microInteration.active::before {
   animation: activeCheckbox 0.3s ease;
   box-shadow: 0 0 0 2px #4d6deb;
   background-color: #37425f;
 }
-.buttons li.active span {
+.microInteration.active span {
   background-color: #4d6deb;
   animation: dotJump 0.3s ease;
 }
-.buttons li.active span::before {
+.microInteration.active span::before {
   background-color: #fff;
 }
-.buttons li.active span::after {
+.microInteration.active span::after {
   animation: scale 0.25s ease;
 }
-.buttons li.active svg {
+.microInteration.active svg {
   animation: baaaam 0.4s ease;
 }
-.buttons li.active svg:last-child {
+.microInteration.active svg:last-child {
   animation: baaaamNegative 0.3s ease;
 }
-.buttons li.submit svg {
+.microInteration.submit svg {
   animation: baaaam 0.4s ease;
 }
-.buttons li.submit svg:last-child {
+.microInteration.submit svg:last-child {
   animation: baaaamNegative 0.3s ease;
 }
 
