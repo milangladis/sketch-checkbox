@@ -24,18 +24,10 @@ body {
 }
 
 /*******************
-    Buttons
+    Styles for buttons
 ********************/
 
-.buttons {
-  padding: 0;
-  margin: 0;
-  max-width: 240px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-}
-.microInteration {
+.blink {
   width: 200px;
   color: rgba(255, 255, 255, 0.5);
   line-height: 50px;
@@ -44,11 +36,19 @@ body {
   position: relative;
   cursor: pointer;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
   transition: all 0.3s ease;
 }
-.microInteration span {
+
+.blink div {
+  display: flex;
+  align-items: center;
+}
+
+.blink input {
+  display: none;
+}
+
+.blink span {
   position: relative;
   width: 16px;
   height: 16px;
@@ -59,14 +59,20 @@ body {
   align-items: center;
   justify-content: center;
 }
-.microInteration span::before {
+
+.blink input[type="checkbox"] + div span, .blink input[type="checkbox"] + div span::before {
+  border-radius: 2px;
+} 
+
+.blink span::before {
   content: "";
   width: 6px;
   height: 6px;
   border-radius: 100%;
   transition: all 0.3s ease;
 }
-.microInteration span::after {
+
+.blink span::after {
   content: "";
   position: absolute;
   left: 0;
@@ -77,68 +83,71 @@ body {
   border-radius: 100%;
   opacity: 0;
 }
-.microInteration svg {
+
+.blink svg {
   position: absolute;
   left: -50px;
   top: -50px;
   opacity: 0;
   visibility: hidden;
 }
-.microInteration::before {
+
+.blink div::before {
   content: "";
   position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease;
-  border-radius: 6px;
-}
-.microInteration:hover span::before {
-  background-color: #373d4c;
-}
-.microInteration:hover::before {
-  background-color: rgba(55, 66, 95, 0.3);
-}
-.microInteration:not(.active):before {
   top: 5px;
   right: 5px;
   bottom: 5px;
   left: 5px;
+  z-index: -1;
+  transition: all 0.3s ease;
+  border-radius: 6px;
 }
-.microInteration.active {
+
+.blink:hover div span::before {
+  background-color: #373d4c;
+}
+
+.blink:hover div::before {
+  background-color: rgba(55, 66, 95, 0.3);
+}
+
+.blink input:checked + div{
   color: #fff;
 }
-.microInteration.active::before {
+
+.blink input:checked + div::before {
   animation: activeCheckbox 0.3s ease;
   box-shadow: 0 0 0 2px #4d6deb;
   background-color: #37425f;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
 }
-.microInteration.active span {
+
+.blink input:checked + div span {
   background-color: #4d6deb;
   animation: dotJump 0.3s ease;
 }
-.microInteration.active span::before {
+
+.blink input:checked + div span::before {
   background-color: #fff;
 }
-.microInteration.active span::after {
+
+.blink input:checked + div span::after {
   animation: scale 0.25s ease;
 }
-.microInteration.active svg {
+
+.blink input:checked + div svg,
+.blink.submit svg {
   animation: baaaam 0.4s ease;
 }
-.microInteration.active svg:last-child {
+
+.blink input:checked + div svg:last-child,
+.blink.submit svg:last-child {
   animation: baaaamNegative 0.3s ease;
 }
-.microInteration.submit svg {
-  animation: baaaam 0.4s ease;
-}
-.microInteration.submit svg:last-child {
-  animation: baaaamNegative 0.3s ease;
-}
-
-
 
 /*******************
     Footer
@@ -153,6 +162,7 @@ footer {
   color: rgba(255, 255, 255, 0.2);
   text-align: center;
 }
+
 footer a {
   color: rgba(255, 255, 255, 0.5);
   font-weight: 600;
@@ -226,26 +236,5 @@ footer a {
   }
   100% {
     transform: scale(1);
-  }
-}
-
-@keyframes activeCheckboxBackup {
-  0% {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-  }
-  70% {
-    top: -2px;
-    right: -2px;
-    bottom: -2px;
-    left: -2px;
-  }
-  100% {
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
   }
 }

@@ -7,19 +7,18 @@
     <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover">
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600i" rel="stylesheet">
-    <script src="./main.js"></script>
+    <script src="./blink.js"></script>
   </head>
   <body>
-    <ul class="buttons">
-      <input type="checkbox" class="microInteration" value="Student">
-      <input type="checkbox" class="microInteration" value="Teacher" checked>
-      <input type="checkbox" class="microInteration" value="Designer">
-      <li class="microInteration">Designer</li>
-      <li class="microInteration active">Student</li>
-      <li class="microInteration">Teacher</li>
-      <li class="microInteration">Manager</li>
-    </ul>
+
+    <input type="checkbox" blink value="Student">
+    <input type="checkbox" blink value="Teacher" checked>
+    <input type="checkbox" blink value="Designer">
+
+    <input type="radio" name="test" blink value="Student">
+    <input type="radio" name="test" blink value="Teacher" checked>
+    <input type="radio" name="test" blink value="Designer">
+
     <footer>With love by <a href="http://twitter.com/milangladis" target="_blank">@milangladis<a></footer>
   </body>
-  
 </html>
