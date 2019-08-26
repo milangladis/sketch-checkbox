@@ -1,6 +1,7 @@
-# Checkbox Micro-Interaction
-Micro-Interactions in the checkbox
+# Micro-Interactions in the form
+Checkbox and radio input in the form interacts with a mouse click and shows a fancy SVG animation that's easy to implement.
 
+# Implementation
 To add this snippet to your website, add a [blink] attibute to any checkbox or radio input and let the magic happen :)
 Don't forget to include .js and .css files or copy them to your code. It's pretty simple.
 
